@@ -2,19 +2,18 @@ import React, { Component } from 'react'
 
 export default class ProductList extends Component {
     showProductDetails = (e) => {
-        // console.log(e.currentTarget.id)
         this.props.showProductDetails(e.currentTarget.id)
     }
 
     render() {
         return (
-            <div class="card-group">
+            <div className="card-group">
                 {this.props.products.map((product) => {
-                    return <div class="card" id={product.id} onClick={this.showProductDetails}>
-                        <img class="card text-white bg-success border-0" src={product.image} alt="Card image cap" />
-                        <div class="card-body">
-                            <h5 class="card-title">{product.title}</h5>
-                            <p class="card-text"><small class="text-muted">₹{product.price}</small></p>
+                    return <div className="card" id={product.id} onClick={this.showProductDetails}>
+                        <img className="card-img-top" src={product.image} alt="No image" />
+                        <div className="card-body">
+                            <h6 className="card-title">{product.title}</h6>
+                            <p className="card-text"><small className="text-muted">₹{product.price}</small></p>
                         </div>
                     </div>
                 })}
